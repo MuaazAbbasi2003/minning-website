@@ -1,0 +1,305 @@
+.mainDivMiddle {
+  width: 100vw;
+  height: 580px;
+  display: flex;
+  background-color: #000000;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.mainDivMiddle svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  margin-bottom: 0;
+}
+
+.div2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-bottom: 0;
+  padding: 20px;
+}
+
+.div3 {
+  margin-top: 50px;
+  width: 90%;
+  max-width: 1200px;
+  height: 90%;
+  display: flex;
+  gap: 60px;
+  margin-bottom: 0;
+}
+
+.div4 {
+  flex: 1;
+  max-width: 638px;
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.div5 {
+  height: auto;
+  min-height: 150px;
+}
+
+.div5 #id1 {
+  font-size: 54px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  line-height: 70px;
+  padding: 0;
+  margin: 0;
+}
+
+.div5 strong {
+  color: #feb71e;
+}
+
+.div6 strong {
+  color: #feb71e;
+}
+
+.div6 {
+  height: auto;
+  min-height: 100px;
+  width: 100%;
+}
+
+.div6 #id2 {
+  font-size: 25px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.div7 img {
+  width: 100%;
+  max-width: 420px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.div8 {
+  width: 40%;
+  height: 90%;
+  background: radial-gradient(
+    circle at center,
+    rgba(243, 172, 29, 0.8),
+    transparent 70%
+  );
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.div8 img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  padding: 0;
+  margin: 0;
+}
+
+.divButton {
+  display: flex;
+  margin-top: 30px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.divButton button {
+  background-color: #feb71e;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 26px;
+  border: none;
+  font-weight: 540;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  height: 50px;
+  min-width: 150px;
+}
+
+.divButton button:hover {
+  background-color: #000000;
+  transform: translateY(-1px);
+  border: 1px solid #feb71e;
+}
+
+#button1 {
+  background-color: #000000;
+  border: 1px solid #feb71e;
+}
+
+#button1:hover {
+  background-color: #feb71e;
+  transform: translateY(-1px);
+}
+
+@media screen and (max-width: 1024px) {
+  .div3 {
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .div5 #id1 {
+    font-size: 42px;
+    line-height: 60px;
+  }
+
+  .div6 #id2 {
+    font-size: 20px;
+  }
+
+  .div8 {
+    display: none; /* Hide the right image */
+  }
+  .mainDivMiddle svg {
+    display: hidden;
+  }
+}
+
+/* Hide right image on smaller screens */
+@media screen and (max-width: 768px) {
+  .mainDivMiddle {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .div3 {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .div4 {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    align-items: center;
+  }
+
+  .div5 {
+    height: auto;
+    margin-top: 0;
+  }
+
+  .div5 #id1 {
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  .div6 {
+    height: auto;
+  }
+
+  .div6 #id2 {
+    font-size: 18px;
+  }
+
+  .div8 {
+    display: none; /* Hide the right image */
+  }
+
+  .divButton {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .div2 {
+    padding: 15px;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 480px) {
+  .mainDivMiddle {
+    height: auto;
+    min-height: 450px;
+  }
+
+  .div2 {
+    padding: 10px;
+  }
+
+  .div3 {
+    width: 95%;
+    margin-top: 15px;
+  }
+
+  .div5 #id1 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .div6 #id2 {
+    font-size: 16px;
+  }
+
+  .div7 img {
+    height: 50px;
+  }
+
+  .divButton {
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .divButton button {
+    width: 100%;
+    max-width: 150px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .div5 #id1 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .div6 #id2 {
+    font-size: 14px;
+  }
+
+  .div7 img {
+    height: 40px;
+  }
+  .divButton {
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .divButton button {
+    width: 50%;
+    max-width: 100px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,29 @@
+.mainDiv {
+  background-color: rgb(0, 0, 0);
+  width: 100vw;
+  max-height: 578px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.firstDiv {
+  border-radius: 20px;
+  border: 1px solid #feb71e;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.h5 {
+  color: #feb71e;
+  font-weight: 400;
+}
+.p1 {
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+.div2 {
+  max-width: 950px;
+  max-height: 578px;
+  height: 100%;
+  width: 100%;
+}

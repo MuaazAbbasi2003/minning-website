@@ -1,0 +1,24 @@
+#divMainOne {
+  height: 300px;
+  max-width: 1000px;
+  width: 100%;
+  background: rgb(16, 16, 16);
+}
+.card1 {
+  border: 2px solid rgb(120, 118, 118);
+  border-radius: 10px;
+  color: white;
+}
+#h3 {
+  color: #feb71e;
+}
+#button1 {
+  background-color: #000000;
+  color: white;
+  border: 2px solid #feb71e;
+}
+#button2 {
+  background-color: #feb71e;
+  color: white;
+  border: 2px solid #feb71e;
+}
