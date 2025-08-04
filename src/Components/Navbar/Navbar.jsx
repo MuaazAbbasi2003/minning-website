@@ -42,17 +42,17 @@ export default function Navbar() {
               </a>
             </li>
             <li className={styles.menuItem}>
-              <a className={styles.menuLink} href="none">
+              <a className={styles.menuLink} href="#FAQs">
                 FAQs
               </a>
             </li>
             <li className={styles.menuItem}>
-              <a className={styles.menuLink} href="none">
+              <a className={styles.menuLink} href="#Blogs">
                 Blogs
               </a>
             </li>
             <li className={styles.menuItem}>
-              <a className={styles.menuLink} href="none">
+              <a className={styles.menuLink} href="#Contact">
                 Contact Us
               </a>
             </li>

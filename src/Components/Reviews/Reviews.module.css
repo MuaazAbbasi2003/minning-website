@@ -1,0 +1,227 @@
+.mainDiv {
+  width: 100vw;
+  display: flex;
+  height: auto;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.contentWrapper {
+  position: relative;
+  width: 1100px;
+}
+
+.h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.p1 {
+  max-width: 700px;
+  text-align: center;
+  color: rgb(144, 144, 144);
+  position: relative;
+  z-index: 2;
+  margin-bottom: 30px;
+}
+
+.div2 {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.svgContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svgContainer svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Rest of your CSS remains the same */
+.div3 {
+  width: 25%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  gap: 10%;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 25px;
+}
+
+.div4 {
+  width: 25%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  gap: 10%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.div5 {
+  width: 27%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  gap: 10%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 25px;
+}
+
+.img1 {
+  height: 20%;
+  width: 70%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img1 img {
+  width: 90%;
+  height: 90%;
+}
+
+.img2 {
+  height: 20%;
+  width: 70%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img2 img {
+  width: 90%;
+  height: 90%;
+}
+
+.img3 {
+  height: 20%;
+  width: 70%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img3 img {
+  width: 90%;
+  height: 90%;
+}
+/* Tablet screens (≤ 1024px) */
+@media (max-width: 1024px) {
+  .contentWrapper {
+    width: 90%;
+  }
+
+  .div3,
+  .div4,
+  .div5 {
+    width: 30%;
+  }
+
+  .h1 {
+    font-size: 40px;
+  }
+
+  .p1 {
+    font-size: 16px;
+  }
+}
+
+/* Mobile screens (≤ 768px) */
+@media (max-width: 768px) {
+  .div2 {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .div3,
+  .div4,
+  .div5 {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .img1,
+  .img2,
+  .img3 {
+    width: 30%;
+    height: auto;
+  }
+
+  .img1 img,
+  .img2 img,
+  .img3 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .p1 {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+}
+
+/* Small mobile screens (≤ 480px — e.g., iPhone SE) */
+@media (max-width: 480px) {
+  .contentWrapper {
+    width: 95%;
+  }
+
+  .h1 {
+    font-size: 28px;
+  }
+
+  .p1 {
+    font-size: 13px;
+  }
+
+  .div3,
+  .div4,
+  .div5 {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .img1,
+  .img2,
+  .img3 {
+    width: 45%;
+  }
+}

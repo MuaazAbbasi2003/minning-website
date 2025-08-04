@@ -39,14 +39,32 @@
   object-fit: contain;
 }
 
-.marquee {
+.marqueeWrapper {
   width: 100%;
-  height: 60px;
-  background-color: #161513;
-  overflow: hidden; /* Ensure nothing spills out */
+  overflow: hidden;
+  position: relative;
 }
 
-/* For very small screens */
+.marqueeContent {
+  display: flex;
+  animation: scroll 7s linear infinite;
+}
+
+.imageSet {
+  display: flex;
+  gap: 20px;
+  min-width: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 @media (max-width: 600px) {
   .div2 {
     gap: 2vw;

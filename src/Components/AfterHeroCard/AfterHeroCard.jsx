@@ -1,5 +1,6 @@
 import styles from "./AfterHeroCard.module.css";
 import CustomIcon from "../AfterHeroCard/CustomIcon";
+import Icon from "../AfterHeroCard/CustomIcon";
 export default function AfterHeroCard() {
   return (
     <div className={`container-fluid bg-black ${styles.the1}`}>
@@ -39,11 +40,13 @@ export default function AfterHeroCard() {
           <div
             className={`col d-flex align-items-start bg-black p-1 p-md-4 mx-2 mx-md-4 ${styles.card1}`}
           >
-            <div className="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0 me-3 mt-2">
-              <svg className="bi" width="2em" height="2em" aria-hidden="true">
+            <div className="icon-square text-body-emphasis  d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0 me-3 mt-2">
+              {/* <svg className="bi" width="2em" height="2em" aria-hidden="true">
                 <use xlinkHref="#toggles2"></use>
-              </svg>
+              </svg> */}
+              <Icon></Icon>
             </div>
+
             <div>
               <h3 className="fs-4" id={styles.h3}>
                 About Crypto Miner

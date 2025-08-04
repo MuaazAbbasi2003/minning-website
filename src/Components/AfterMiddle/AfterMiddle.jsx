@@ -6,22 +6,39 @@ import image4 from "../../Assets/Images/PNGs/image4.png";
 export default function AfterMiddle() {
   return (
     <div className={styles.marquee}>
-      <marquee behavior="scroll" direction="left" scrollamount="10">
-        <div className={styles.div2}>
-          <div className={styles.img1}>
-            <img src={image1} alt="image1" />
+      <div className={styles.marqueeContainer}>
+        <div className={styles.marqueeContent}>
+          <div className={styles.div2}>
+            <div className={styles.img1}>
+              <img src={image1} alt="image1" />
+            </div>
+            <div className={styles.img3}>
+              <img src={image3} alt="image3" />
+            </div>
+            <div className={styles.img2}>
+              <img src={image2} alt="image2" />
+            </div>
+            <div className={styles.img4}>
+              <img src={image4} alt="image4" />
+            </div>
           </div>
-          <div className={styles.img3}>
-            <img src={image3} alt="image1" />
-          </div>
-          <div className={styles.img2}>
-            <img src={image2} alt="image1" />
-          </div>
-          <div className={styles.img4}>
-            <img src={image4} alt="image1" />
+          {/* Duplicate the content for seamless looping */}
+          <div className={styles.div2}>
+            <div className={styles.img1}>
+              <img src={image1} alt="image1" />
+            </div>
+            <div className={styles.img3}>
+              <img src={image3} alt="image3" />
+            </div>
+            <div className={styles.img2}>
+              <img src={image2} alt="image2" />
+            </div>
+            <div className={styles.img4}>
+              <img src={image4} alt="image4" />
+            </div>
           </div>
         </div>
-      </marquee>
+      </div>
     </div>
   );
 }

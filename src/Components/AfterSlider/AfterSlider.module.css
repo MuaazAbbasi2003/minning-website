@@ -1,0 +1,46 @@
+#imgDiv {
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(67, 66, 66)),
+    linear-gradient(to bottom, #999999, #feb71e);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 4px;
+  width: 400px;
+  height: 450px;
+  margin-top: 30px;
+}
+.hell {
+  width: 100vw;
+  height: auto;
+  margin: 0 auto;
+  background-color: black;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#h1 {
+  color: #feb71e;
+  font-weight: 500;
+  margin-left: 20px;
+}
+.lead1 {
+  color: white;
+  text-align: justify;
+  font-weight: 400;
+  margin-left: 20px;
+}
+.responsiveImage {
+  width: 350px;
+  height: 350px;
+  aspect-ratio: 1 / 1;
+}
+.cardDiv {
+  background-color: rgba(0, 0, 0, 0.176);
+}
+.cardbodyDiv {
+  background-color: rgba(0, 0, 0, 0.176);
+}
+.cardtitle {
+  color: white;
+}
