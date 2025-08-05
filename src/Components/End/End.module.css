@@ -43,14 +43,13 @@
 }
 
 .anchordiv a {
-  color: black;
+  color: rgb(0, 0, 0);
   transition: color 0.3s ease;
   position: relative;
 }
 
 .anchordiv a:hover {
-  color: white;
-  text-decoration: underline;
+  color: rgb(255, 255, 255);
 }
 
 .anchordiv a:hover::after {
@@ -60,7 +59,7 @@
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: white;
+  background-color: rgba(107, 103, 103, 0.205);
   transform: scaleX(1);
   transition: transform 0.3s ease;
 }

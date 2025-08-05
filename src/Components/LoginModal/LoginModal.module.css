@@ -1,0 +1,78 @@
+.loginModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loginBox {
+  background: radial-gradient(#000, #111);
+  border-radius: 15px;
+  padding: 30px 40px;
+  width: 550px;
+  text-align: center;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 20px #feb71e50;
+  border: 1px solid #feb71e;
+}
+.closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.loginBox h2 {
+  color: #feb71e;
+  margin-bottom: 10px;
+}
+
+.loginBox p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.arrowIcon {
+  width: 200px;
+  margin: 10px auto 20px;
+}
+
+.googleBtn,
+.microsoftBtn {
+  width: 100%;
+  padding: 12px 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.googleBtn {
+  background-color: black;
+  color: white;
+  border: 1px solid #feb71e;
+}
+
+.microsoftBtn {
+  background-color: white;
+  color: black;
+}
+
+.googleBtn img,
+.microsoftBtn img {
+  width: 20px;
+}

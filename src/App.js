@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useState } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Middle from "./Components/Middle-Section/Middle";
 import AfterMiddle from "./Components/AfterMiddle/AfterMiddle";
@@ -11,7 +12,9 @@ import Reviews from "./Components/Reviews/Reviews";
 import FAQs from "./Components/Faqs/FAQs";
 import Blogs from "./Components/Blogs/Blogs";
 import End from "./Components/End/End";
+import LoginModal from "./Components/LoginModal/LoginModal";
 function App() {
+  const [showModal, setShowModal] = useState(true);
   return (
     <div className={StyleSheet.body}>
       <Navbar />
@@ -26,6 +29,7 @@ function App() {
       <FAQs />
       <Blogs />
       <End />
+      <>{showModal && <LoginModal onClose={() => setShowModal(false)} />}</>
     </div>
   );
 }
