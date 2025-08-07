@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./TapandEarn.module.css";
 
 export default function TapAndEarn() {
+  const [showPlus, setShowPlus] = useState(false);
+
   const handleClick = () => {
-    console.log("Button tapped!");
+    setShowPlus(true);
+    setTimeout(() => setShowPlus(false), 800); // hide after animation
   };
+
   return (
     <div className={styles.mainDiv}>
       <div className={styles.leftDiv}>
@@ -17,6 +21,7 @@ export default function TapAndEarn() {
           <button className={styles.buttonDivButton} onClick={handleClick}>
             TAP
           </button>
+          {showPlus && <span className={styles.floatingPlus}>+4</span>}
         </div>
       </div>
       <div className={styles.rightDiv}>

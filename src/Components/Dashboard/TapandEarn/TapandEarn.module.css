@@ -5,6 +5,7 @@
   display: flex;
   margin-left: 90px;
 }
+
 .leftDiv {
   width: 33.3%;
   height: 100%;
@@ -13,6 +14,7 @@
 .leftDiv h1 {
   color: #cccccc6c;
 }
+
 .midDiv {
   width: 33.3%;
   height: 100%;
@@ -22,6 +24,7 @@
   align-items: center;
   justify-content: flex-end;
 }
+
 .rightDiv {
   width: 33.3%;
   height: 100%;
@@ -54,6 +57,7 @@
   background-color: #111111;
   height: 45%;
   margin-bottom: 20%;
+  position: relative;
 }
 
 .buttonDivLabel {
@@ -84,6 +88,30 @@
 .buttonDivButton:active {
   transform: scale(0.96);
 }
+
+/* Floating +4 Effect */
+.floatingPlus {
+  position: absolute;
+  bottom: 40%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffbe18;
+  animation: floatUp 0.9s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 4;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
   .mainDiv {
     width: 100vw;
@@ -118,6 +146,10 @@
 }
 
 @media (max-width: 768px) {
+  .leftDiv h1 {
+    margin-right: 30px;
+  }
+
   .buttonDivLabel {
     font-size: 18px;
     padding: 8px 24px;
@@ -160,6 +192,7 @@
     font-size: 18px;
     text-align: center;
     padding: 0 10px;
+    margin-right: 20px;
   }
 }
 

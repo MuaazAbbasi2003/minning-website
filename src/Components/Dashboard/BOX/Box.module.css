@@ -107,7 +107,7 @@
   display: block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .box1 {
     flex-direction: row;
     height: 200px;

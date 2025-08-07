@@ -8,34 +8,49 @@ import tm1 from "../../../Assets/Images/SVGs/topmid.svg";
 import tm2 from "../../../Assets/Images/SVGs/topmid2.svg";
 import tm3 from "../../../Assets/Images/SVGs/topmid3.svg";
 import ProfileModal from "./ProfileModal/ProfileModal";
+// ... other imports ...
 
 export default function Navbar({ activeSection, setActiveSection }) {
   const [showNotificationModal, setShowNotificationModal] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
   const dropdownRef = useRef();
 
-  const toggleNotificationModal = () =>
-    setShowNotificationModal((prev) => !prev);
-  const toggleProfileModal = () => setShowProfileModal((prev) => !prev);
-  const toggleMobileMenu = () => setShowMobileMenu((prev) => !prev);
+  // Detect screen size on load and on resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 899);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
+  // Handle click outside dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target) &&
-        !event.target.classList.contains(styles.mobileMenuIcon)
-      ) {
+      const dropdownEl = dropdownRef.current;
+      const clickedInsideDropdown =
+        dropdownEl && dropdownEl.contains(event.target);
+      const clickedMenuToggleIcon = event.target.closest?.(
+        `.${styles.mobileMenuIcon}`
+      );
+      if (!clickedInsideDropdown && !clickedMenuToggleIcon) {
         setShowMobileMenu(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const toggleNotificationModal = () =>
+    setShowNotificationModal((prev) => !prev);
+  const toggleProfileModal = () => setShowProfileModal((prev) => !prev);
+  const toggleMobileMenu = () => setShowMobileMenu((prev) => !prev);
 
   return (
     <>
@@ -45,65 +60,68 @@ export default function Navbar({ activeSection, setActiveSection }) {
           <span className="ms-2">Crypto Mining</span>
         </div>
 
-        <div
-          className={`d-flex justify-content-center ${styles.leftMidDiv} ${
-            showMobileMenu ? styles.hideOnMobileMenu : ""
-          }`}
-        >
-          <button
-            className={`${styles.navButton} ${
-              activeSection === "dashboard" ? styles.activeNavButton : ""
-            }`}
-            onClick={() => setActiveSection("dashboard")}
-          >
-            <img src={tm1} alt="icon" className={styles.topm1} />
-            Dashboard
-          </button>
-          <button
-            className={`${styles.navButton} ${
-              activeSection === "tap" ? styles.activeNavButton : ""
-            }`}
-            onClick={() => setActiveSection("tap")}
-          >
-            <img src={tm2} alt="icon" className={styles.topm1} />
-            Tap & Earn
-          </button>
-          <button
-            className={`${styles.navButton} ${
-              activeSection === "analytics" ? styles.activeNavButton : ""
-            }`}
-            onClick={() => setActiveSection("analytics")}
-          >
-            <img src={tm3} alt="icon" className={styles.topm1} />
-            Analytics
-          </button>
-        </div>
+        {/* Conditionally render only on desktop */}
+        {!isMobile && (
+          <div className={`d-flex justify-content-center ${styles.leftMidDiv}`}>
+            <button
+              className={`${styles.navButton} ${
+                activeSection === "dashboard" ? styles.activeNavButton : ""
+              }`}
+              onClick={() => setActiveSection("dashboard")}
+            >
+              <img src={tm1} alt="icon" className={styles.topm1} />
+              Dashboard
+            </button>
+            <button
+              className={`${styles.navButton} ${
+                activeSection === "tap" ? styles.activeNavButton : ""
+              }`}
+              onClick={() => setActiveSection("tap")}
+            >
+              <img src={tm2} alt="icon" className={styles.topm1} />
+              Tap & Earn
+            </button>
+            <button
+              className={`${styles.navButton} ${
+                activeSection === "analytics" ? styles.activeNavButton : ""
+              }`}
+              onClick={() => setActiveSection("analytics")}
+            >
+              <img src={tm3} alt="icon" className={styles.topm1} />
+              Analytics
+            </button>
+          </div>
+        )}
 
         <div className="d-flex align-items-center" style={{ gap: "1rem" }}>
-          <div className={styles.topIMgright}>
-            <img
-              src={icon2}
-              alt="notification-icon"
-              className={styles.notification}
-              onClick={toggleNotificationModal}
-              style={{ cursor: "pointer" }}
-            />
-            <img
-              src={g4}
-              alt="User Avatar"
-              className={styles.avatar}
-              onClick={toggleProfileModal}
-              style={{ cursor: "pointer" }}
-            />
-            <span className="ms-2">Username</span>
-          </div>
+          {!isMobile && (
+            <div className={styles.topIMgright}>
+              <img
+                src={icon2}
+                alt="notification-icon"
+                className={styles.notification}
+                onClick={toggleNotificationModal}
+                style={{ cursor: "pointer" }}
+              />
+              <img
+                src={g4}
+                alt="User Avatar"
+                className={styles.avatar}
+                onClick={toggleProfileModal}
+                style={{ cursor: "pointer" }}
+              />
+              <span className="ms-2">Username</span>
+            </div>
+          )}
 
+          {/* Mobile Menu Icon */}
           <div className={styles.mobileMenuIcon} onClick={toggleMobileMenu}>
             &#9776;
           </div>
         </div>
       </nav>
 
+      {/* Mobile Dropdown */}
       {showMobileMenu && (
         <div className={styles.mobileDropdown} ref={dropdownRef}>
           <button
