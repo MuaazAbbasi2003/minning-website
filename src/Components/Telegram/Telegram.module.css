@@ -1,0 +1,145 @@
+.mainDiv {
+  width: 100vw;
+  min-height: 250px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.secondDiv {
+  margin-top: 20px;
+  width: 95%;
+  max-width: 500px;
+  height: auto;
+  min-height: 230px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 15px 0;
+}
+
+.thirdDiv {
+  width: 95%;
+  height: auto;
+  margin-top: 10px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.thirdDiv img {
+  width: 50%;
+  max-width: 200px;
+  height: auto;
+  max-height: 150px;
+}
+
+.secondDiv p {
+  color: white;
+  font-size: clamp(14px, 4vw, 18px);
+  font-weight: 500;
+  margin-top: 15px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.secondDiv button {
+  background-color: #ffbe18;
+  color: #000;
+  width: 80%;
+  max-width: 200px;
+  height: 40px;
+  min-height: 35px;
+  border: none;
+  font-size: clamp(14px, 4vw, 16px);
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease-in-out;
+  margin-top: 15px;
+  padding: 0 15px;
+}
+
+.secondDiv button:active {
+  transform: scale(0.95);
+}
+
+/* Media Queries for specific breakpoints */
+@media (max-width: 768px) {
+  .secondDiv {
+    width: 85%;
+    margin-top: 15px;
+  }
+
+  .thirdDiv img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainDiv {
+    min-height: 240px;
+  }
+
+  .secondDiv {
+    width: 90%;
+    border-radius: 15px;
+  }
+
+  .secondDiv button {
+    width: 85%;
+    height: 38px;
+  }
+}
+
+/* iPhone SE and similar small devices */
+@media (max-width: 375px) {
+  .mainDiv {
+    min-height: 220px;
+  }
+
+  .secondDiv {
+    margin-top: 10px;
+    border-width: 1px;
+  }
+
+  .secondDiv p {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .secondDiv button {
+    width: 90%;
+    height: 35px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .thirdDiv img {
+    width: 60%;
+  }
+}
+
+/* Very small devices (320px and below) */
+@media (max-width: 320px) {
+  .secondDiv {
+    width: 95%;
+  }
+
+  .secondDiv button {
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .secondDiv p {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}

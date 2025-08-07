@@ -2,7 +2,7 @@ import styles from "./navbar.module.css";
 import { useState } from "react";
 import LogoImg from "../../Assets/Images/PNGs/Logo.png";
 
-export default function Navbar() {
+export default function Navbar({ onLoginClick }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleMobileMenu() {
@@ -59,6 +59,7 @@ export default function Navbar() {
             <li className={`${styles.menuItem} ${styles.mobileLoginItem}`}>
               <button
                 className={`${styles.loginButton} ${styles.mobileLoginButton}`}
+                onClick={onLoginClick}
               >
                 Login
               </button>
@@ -67,7 +68,9 @@ export default function Navbar() {
         </div>
 
         <div className={styles.loginButtonWrapper}>
-          <button className={styles.loginButton}>Login</button>
+          <button className={styles.loginButton} onClick={onLoginClick}>
+            Login
+          </button>
         </div>
       </nav>
     </div>

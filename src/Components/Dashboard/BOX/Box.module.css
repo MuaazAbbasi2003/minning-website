@@ -1,0 +1,134 @@
+.box1 {
+  background: #f7b500;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.boxinside {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.box1 .value {
+  color: #f7b500;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+.box1 .label {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 0;
+}
+
+.box2 {
+  background: #161616;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin: 0 auto 20px;
+}
+
+.boxinside2 {
+  width: 90%;
+  height: 90%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.boxinside2 .value {
+  color: #f7b500;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.boxinside2 .label {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #aaa;
+  text-align: center;
+}
+
+.box3 {
+  background: #5959591d;
+  border-radius: 8px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.fisrstDiv .label {
+  font-weight: 600;
+}
+
+.fisrstDiv .valueGray {
+  color: #929191;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+}
+
+.withdrawButton {
+  background: #f7b500;
+  border: none;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 200px;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .box1 {
+    flex-direction: row;
+    height: 200px;
+  }
+
+  .box1 .value {
+    font-size: 4rem;
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  .box1 .label {
+    font-size: 1.5rem;
+    margin-left: 30px;
+  }
+
+  .boxinside2 .value {
+    font-size: 4.5rem;
+  }
+
+  .fisrstDiv .valueGray {
+    font-size: 4rem;
+  }
+}

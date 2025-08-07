@@ -1,0 +1,405 @@
+/* ProfileComponent.module.css */
+
+.profile {
+  width: 100vw;
+  height: 100vh;
+  background: #161412;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.profileText {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.profileTitle {
+  border: 2px solid #000000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.profileTitle h1 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  color: #feb71e;
+  margin: 0;
+}
+
+.profileContentWrapper {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.profileForm {
+  width: 500px;
+  background: #0a0806;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.profileImage {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+.profileInput {
+  width: 90%;
+  height: 60px;
+  background: #161412;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.profileButton {
+  width: 165px;
+  height: 54px;
+  border-radius: 6px;
+  background-color: #feb71e;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.profileDetails {
+  width: 500px;
+  background: #0a0806;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profileAccount {
+  width: 500px;
+  background: #0a0806;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profileName,
+.profileEmail {
+  width: 100%;
+  height: 85px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.profileName h1,
+.profileEmail h1 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  margin-top: 10px;
+  color: white;
+}
+
+.nameInput,
+.emailInput {
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  padding-left: 10px;
+  border: none;
+  font-size: 16px;
+  background: #161412;
+  color: white;
+}
+
+.accountField {
+  background: #161412;
+  border-radius: 8px;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.accountLabelInput {
+  background: transparent;
+  border: none;
+  color: gray;
+  font-size: 14px;
+  width: 50%;
+  font-family: Montserrat, sans-serif;
+}
+
+.accountInput {
+  background: transparent;
+  border: none;
+  text-align: right;
+  color: #feb71e;
+  font-size: 14px;
+  width: 50%;
+  font-family: Montserrat, sans-serif;
+}
+
+.accountLabelInput::placeholder,
+.accountInput::placeholder {
+  color: #a7a7a7;
+  opacity: 1;
+}
+
+.accountLabelInput:focus,
+.accountInput:focus {
+  outline: none;
+}
+
+.accountButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  gap: 20px;
+}
+
+.cancelButton,
+.saveButton {
+  height: 64px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: Montserrat, sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.cancelButton {
+  background: transparent;
+  color: white;
+  border: 2px solid #feb71e;
+}
+
+.cancelButton:hover {
+  background: #feb71e;
+  color: #000;
+}
+
+.saveButton {
+  background: #feb71e;
+  color: black;
+  border: none;
+}
+
+.saveButton:hover {
+  background: #e0a810;
+}
+@media (max-width: 1600px) {
+  .profileForm,
+  .profileDetails,
+  .profileAccount,
+  .accountButtons {
+    width: 550px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .profileForm,
+  .profileDetails,
+  .profileAccount,
+  .accountButtons {
+    width: 400px;
+  }
+
+  .profileTitle h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 992px) {
+  .profileForm,
+  .profileDetails,
+  .profileAccount,
+  .accountButtons {
+    width: 580px;
+  }
+
+  .profileImage {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profileButton {
+    width: 180px;
+    height: 60px;
+  }
+
+  .profileDetails {
+    height: 280px;
+    padding: 25px;
+  }
+
+  .profileName,
+  .profileEmail {
+    height: 100px;
+  }
+
+  .nameInput,
+  .emailInput {
+    height: 75px;
+    font-size: 18px;
+    padding-left: 15px;
+  }
+
+  .accountField {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .cancelButton,
+  .saveButton {
+    height: 70px;
+    font-size: 18px;
+  }
+
+  .profileForm {
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .profileInput {
+    height: 70px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile {
+    padding: 40px 15px;
+  }
+
+  .profileForm,
+  .profileDetails,
+  .profileAccount,
+  .accountButtons {
+    width: 350px;
+  }
+
+  .profileTitle h1 {
+    font-size: 26px;
+  }
+
+  .profileForm {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .profileInput {
+    width: 100%;
+  }
+
+  .profileButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile {
+    padding: 30px 10px;
+  }
+
+  .profileForm,
+  .profileDetails,
+  .profileAccount,
+  .accountButtons {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .profileTitle h1 {
+    font-size: 24px;
+  }
+
+  .profileImage {
+    width: 90px;
+    height: 90px;
+  }
+
+  .accountButtons {
+    flex-direction: column;
+  }
+
+  .cancelButton,
+  .saveButton {
+    height: 56px;
+  }
+}
+
+@media (max-width: 370px) {
+  .profile {
+    padding: 25px 8px;
+  }
+
+  .profileTitle {
+    padding: 8px 15px;
+  }
+
+  .profileTitle h1 {
+    font-size: 22px;
+  }
+
+  .profileForm,
+  .profileDetails,
+  .profileAccount {
+    padding: 15px;
+  }
+
+  .profileImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profileInput,
+  .nameInput,
+  .emailInput {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .accountField {
+    height: 50px;
+    padding: 0 10px;
+  }
+
+  .accountLabelInput,
+  .accountInput {
+    font-size: 13px;
+  }
+}

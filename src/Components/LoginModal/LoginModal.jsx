@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./LoginModal.module.css";
 import g3 from "../../Assets/Images/PNGs/g3.png";
 
-export default function LoginModal({ onClose }) {
+export default function LoginModal({ onCl }) {
   return (
     <div className={styles.loginModal}>
       <div className={styles.loginBox}>
-        <span className={styles.closeBtn} onClick={onClose}>
+        <span className={styles.closeBtn} onClick={onCl}>
           ×
         </span>
         <h2>Welcome</h2>

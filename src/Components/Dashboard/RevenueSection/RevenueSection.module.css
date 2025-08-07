@@ -1,0 +1,243 @@
+.revenue {
+  background-color: #141210;
+  border-radius: 12px;
+  color: white;
+}
+.tabs {
+  background: #000;
+  border-radius: 999px;
+  display: flex;
+  padding: 4px;
+  gap: 4px;
+}
+
+.tabButton {
+  background: transparent;
+  border: none;
+  color: #888;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.tabButton.active {
+  background-color: transparent;
+  color: #f7b500;
+}
+
+.tabButton.active::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: #f7b500;
+  border-radius: 999px;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+}
+
+.downloadPNG,
+.downloadPDF {
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+}
+
+.downloadPNG {
+  background: #f7b500;
+  color: black;
+}
+
+.downloadPDF {
+  background: transparent;
+  color: #f7b500;
+  border: 1.5px solid #f7b500;
+}
+.chartArea {
+  background: transparent;
+  height: 200px;
+  position: relative;
+  padding: 10px 0;
+}
+
+.chartLines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chartLines li {
+  border-top: 1px solid #333;
+  position: relative;
+}
+
+.chartLines li .dot {
+  position: absolute;
+  top: -6px;
+  left: 0;
+}
+.legendBox {
+  background: #0d0d0d;
+  padding: 1.2rem;
+  border-radius: 12px;
+}
+
+.legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.red {
+  background-color: #ff4d4d;
+}
+
+.yellow {
+  background-color: #f7b500;
+}
+
+.green {
+  background-color: #32cd32;
+}
+
+.blue {
+  background-color: #00cfff;
+}
+@media (max-width: 768px) {
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .tabButton {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .tabButton.active::after {
+    left: 15%;
+    right: 15%;
+  }
+
+  .downloadPNG,
+  .downloadPDF {
+    font-size: 0.8rem;
+    padding: 5px 14px;
+  }
+
+  .legendBox {
+    padding: 1rem;
+  }
+
+  .legend li {
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .dot {
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+  }
+
+  .chartArea {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs {
+    gap: 4px;
+    padding: 5px;
+  }
+
+  .tabButton {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .tabButton.active::after {
+    left: 10%;
+    right: 10%;
+  }
+
+  .downloadPNG,
+  .downloadPDF {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+
+  .legendBox {
+    padding: 0.9rem;
+  }
+
+  .legend li {
+    font-size: 0.8rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+  }
+
+  .chartArea {
+    height: 160px;
+  }
+}
+
+@media (max-width: 375px) {
+  .tabButton {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .downloadPNG,
+  .downloadPDF {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .legend li {
+    font-size: 0.75rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+  }
+
+  .chartArea {
+    height: 140px;
+  }
+}

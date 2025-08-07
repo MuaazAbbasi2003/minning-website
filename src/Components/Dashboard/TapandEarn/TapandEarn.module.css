@@ -1,0 +1,183 @@
+.mainDiv {
+  width: 90vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  margin-left: 90px;
+}
+.leftDiv {
+  width: 33.3%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+}
+.leftDiv h1 {
+  color: #cccccc6c;
+}
+.midDiv {
+  width: 33.3%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.rightDiv {
+  width: 33.3%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+.rightDiv button {
+  background-color: #ffbe18;
+  color: #000;
+  width: auto;
+  height: 7%;
+  border: none;
+  font-size: 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease-in-out;
+}
+
+.buttonDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #111111;
+  height: 45%;
+  margin-bottom: 20%;
+}
+
+.buttonDivLabel {
+  margin-top: 20px;
+  background-color: #000;
+  color: #ccc;
+  padding: 10px 30px;
+  border-radius: 999px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.buttonDivButton {
+  background-color: #ffbe18;
+  color: #000;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease-in-out;
+}
+
+.buttonDivButton:active {
+  transform: scale(0.96);
+}
+@media (max-width: 1024px) {
+  .mainDiv {
+    width: 100vw;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  .leftDiv,
+  .midDiv,
+  .rightDiv {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .rightDiv {
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .buttonDiv {
+    height: auto;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .buttonDivLabel {
+    font-size: 18px;
+    padding: 8px 24px;
+    margin-bottom: 25px;
+  }
+
+  .buttonDivButton {
+    width: 130px;
+    height: 130px;
+    font-size: 26px;
+  }
+
+  .rightDiv button {
+    font-size: 14px;
+    height: 36px;
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonDivLabel {
+    font-size: 16px;
+    padding: 6px 20px;
+    margin-bottom: 20px;
+  }
+
+  .buttonDivButton {
+    width: 110px;
+    height: 110px;
+    font-size: 22px;
+  }
+
+  .rightDiv button {
+    font-size: 13px;
+    height: 32px;
+    padding: 0 12px;
+  }
+
+  .leftDiv h1 {
+    font-size: 18px;
+    text-align: center;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .buttonDivButton {
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+  }
+
+  .buttonDivLabel {
+    font-size: 14px;
+    padding: 6px 16px;
+  }
+
+  .rightDiv button {
+    font-size: 12px;
+    height: 30px;
+    padding: 0 10px;
+  }
+}

@@ -59,7 +59,6 @@
   height: 100%;
 }
 
-/* Rest of your CSS remains the same */
 .div3 {
   width: 25%;
   height: 100%;
@@ -93,34 +92,8 @@
   padding-top: 25px;
 }
 
-.img1 {
-  height: 20%;
-  width: 70%;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.img1 img {
-  width: 90%;
-  height: 90%;
-}
-
-.img2 {
-  height: 20%;
-  width: 70%;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.img2 img {
-  width: 90%;
-  height: 90%;
-}
-
+.img1,
+.img2,
 .img3 {
   height: 20%;
   width: 70%;
@@ -130,10 +103,22 @@
   align-items: center;
 }
 
+.img1 img,
+.img2 img,
 .img3 img {
   width: 90%;
   height: 90%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Hover Effects */
+.img1 img:hover,
+.img2 img:hover,
+.img3 img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
 /* Tablet screens (≤ 1024px) */
 @media (max-width: 1024px) {
   .contentWrapper {
@@ -198,7 +183,7 @@
   }
 }
 
-/* Small mobile screens (≤ 480px — e.g., iPhone SE) */
+/* Small mobile screens (≤ 480px) */
 @media (max-width: 480px) {
   .contentWrapper {
     width: 95%;

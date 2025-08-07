@@ -1,0 +1,169 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.leftTopDiv {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+}
+
+.leftMidDiv {
+  background-color: rgb(31, 30, 30);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0rem;
+}
+
+.navButton {
+  color: rgb(141, 137, 137);
+  background: none;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding-bottom: 0rem;
+}
+
+.navButton:hover {
+  color: #f7b500;
+}
+
+.activeNavButton {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.activeNavButton::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 26%;
+  width: 66%;
+  height: 3px;
+  background-color: #ffc107;
+  border-radius: 5px;
+}
+
+.topIMgright {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.notification {
+  margin-right: 0.5rem;
+}
+
+.logoCircle {
+  width: 20px;
+  height: 20px;
+  background: #f7b500;
+  border-radius: 50%;
+}
+
+.topm1 {
+  margin: 0 0.5rem 0 0;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mobileMenuIcon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Mobile dropdown */
+.mobileDropdown {
+  display: flex;
+  flex-direction: column;
+  background-color: #1f1e1e;
+  position: absolute;
+  top: 60px;
+  right: 1rem;
+  padding: 1rem;
+  z-index: 999;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.mobileTopRight {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0.5rem 2rem;
+  }
+
+  .leftTopDiv {
+    flex: 0 1 auto;
+    min-width: 150px;
+  }
+
+  .leftMidDiv {
+    flex: 1 1 auto;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+  }
+
+  .topIMgright {
+    flex: 0 1 auto;
+    min-width: 150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 0.5rem 3rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .leftMidDiv {
+    display: none !important;
+  }
+
+  .topIMgright {
+    display: none;
+  }
+
+  .mobileMenuIcon {
+    display: block;
+  }
+}
+@media (max-width: 899px) {
+  .hideOnMobileMenu {
+    display: none !important;
+  }
+}

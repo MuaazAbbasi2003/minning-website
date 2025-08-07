@@ -1,4 +1,4 @@
-import HeroPic from "../../Assets/Images/PNGs/HeroPic.png";
+import HeroPic from "../../Assets/Images/PNGs/muaaz1.png";
 import styles from "./hero.module.css";
 
 export default function Hero() {
