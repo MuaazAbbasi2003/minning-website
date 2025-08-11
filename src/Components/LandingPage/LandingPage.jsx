@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import Middle from "../Middle-Section/Middle";
 import AfterMiddle from "../AfterMiddle/AfterMiddle";
@@ -12,14 +12,16 @@ import FAQs from "../Faqs/FAQs";
 import Blogs from "../Blogs/Blogs";
 import End from "../End/End";
 import LoginModal from "../LoginModal/LoginModal.jsx";
-import { useState } from "react";
 import Telegram from "../Telegram/telegram.jsx";
+import CreateAccountModal from "../LoginModal/CreateAccount/CreateAccountModal.jsx";
 
 export default function LandingPage() {
-  const [showModal, setShowModal] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
+
   return (
     <>
-      <Navbar onLoginClick={() => setShowModal(!showModal)} />
+      <Navbar onSwitchToLogin={() => setShowLogin(true)} />
       <Middle />
       <AfterMiddle />
       <Telegram />
@@ -32,7 +34,28 @@ export default function LandingPage() {
       <FAQs />
       <Blogs />
       <End />
-      <>{showModal && <LoginModal onCl={() => setShowModal(false)} />}</>
+
+      {/* Login Modal */}
+      {showLogin && (
+        <LoginModal
+          onCl={() => setShowLogin(false)}
+          onSwitchToSignup={() => {
+            setShowLogin(false);
+            setShowSignup(true);
+          }}
+        />
+      )}
+
+      {/* Create Account Modal */}
+      {showSignup && (
+        <CreateAccountModal
+          onClose={() => setShowSignup(false)}
+          onSwitchToLogin={() => {
+            setShowSignup(false);
+            setShowLogin(true);
+          }}
+        />
+      )}
     </>
   );
 }

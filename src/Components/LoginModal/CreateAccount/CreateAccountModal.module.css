@@ -1,4 +1,4 @@
-.loginModal {
+.modalOverlay {
   position: fixed;
   inset: 0;
   width: 100vw;
@@ -10,11 +10,12 @@
   z-index: 1000;
 }
 
-.loginBox {
+.modalBox {
   background: radial-gradient(#000, #111);
   border-radius: 15px;
   padding: 18px 22px;
-  width: 320px; /* Smaller modal */
+  width: 380px;
+  max-height: 530px;
   max-width: 90vw;
   text-align: center;
   color: white;
@@ -22,7 +23,6 @@
   box-shadow: 0 0 20px #feb71e50;
   border: 1px solid #feb71e;
 }
-
 .closeBtn {
   position: absolute;
   top: 12px;
@@ -31,23 +31,23 @@
   cursor: pointer;
 }
 
-.loginBox h2 {
+.modalBox h2 {
   color: #feb71e;
   margin-bottom: 6px;
 }
 
-.loginBox p {
+.modalBox p {
   color: #ccc;
   margin-bottom: 16px;
 }
 
-.loginForm {
+.form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.loginForm input {
+.form input {
   padding: 9px;
   border-radius: 6px;
   border: 1px solid #feb71e;
@@ -56,7 +56,7 @@
   font-size: 14px;
 }
 
-.loginForm input::placeholder {
+.form input::placeholder {
   color: #aaa;
 }
 
@@ -73,22 +73,6 @@
 
 .submitBtn:hover {
   background-color: #e5a418;
-}
-
-.signupBtn {
-  background-color: transparent;
-  color: #feb71e;
-  padding: 9px;
-  border-radius: 6px;
-  font-weight: bold;
-  border: 1px solid #feb71e;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.signupBtn:hover {
-  background-color: #feb71e;
-  color: black;
 }
 
 .divider {
@@ -139,8 +123,23 @@
   width: 18px;
 }
 
+.switchText {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.switchText span {
+  color: #feb71e;
+  cursor: pointer;
+}
+
+.switchText span:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 480px) {
-  .loginBox {
+  .modalBox {
     width: 92%;
     padding: 16px;
   }

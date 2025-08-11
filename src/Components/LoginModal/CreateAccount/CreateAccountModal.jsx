@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import styles from "./LoginModal.module.css";
+import styles from "./CreateAccountModal.module.css";
 
-export default function LoginModal({ onCl, onSwitchToSignup }) {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+export default function CreateAccountModal({ onClose, onSwitchToLogin }) {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -10,21 +15,29 @@ export default function LoginModal({ onCl, onSwitchToSignup }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Auth logic here
+    console.log("Account created:", formData);
+    // Sign-up logic here
   }
 
   return (
-    <div className={styles.loginModal}>
-      <div className={styles.loginBox}>
-        <span className={styles.closeBtn} onClick={onCl}>
+    <div className={styles.modalOverlay}>
+      <div className={styles.modalBox}>
+        <span className={styles.closeBtn} onClick={onClose}>
           ×
         </span>
-        <h2>Welcome</h2>
-        <p>Sign In To Your Account</p>
+        <h2>Create Account</h2>
+        <p>Join us today — it's quick and easy!</p>
 
-        {/* Login Form */}
-        <form onSubmit={handleSubmit} className={styles.loginForm}>
+        {/* Create Account Form */}
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <input
+            type="text"
+            name="fullName"
+            placeholder="Full Name"
+            value={formData.fullName}
+            onChange={handleChange}
+            required
+          />
           <input
             type="email"
             name="email"
@@ -41,15 +54,16 @@ export default function LoginModal({ onCl, onSwitchToSignup }) {
             onChange={handleChange}
             required
           />
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            required
+          />
           <button type="submit" className={styles.submitBtn}>
-            Sign In
-          </button>
-          <button
-            type="button"
-            className={styles.signupBtn}
-            onClick={onSwitchToSignup}
-          >
-            Create Account
+            Sign Up
           </button>
         </form>
 
@@ -90,8 +104,14 @@ export default function LoginModal({ onCl, onSwitchToSignup }) {
             src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
             alt="Microsoft"
           />
-          Sign in With Microsoft
+          Sign up With Microsoft
         </button>
+
+        {/* Switch to Login */}
+        <p className={styles.switchText}>
+          Already have an account?{" "}
+          <span onClick={onSwitchToLogin}>Sign In</span>
+        </p>
       </div>
     </div>
   );
