@@ -4,6 +4,11 @@
   border-bottom: 1px solid #dddddd96;
   position: relative;
 }
+.active {
+  color: #feb71e;
+  font-weight: bold;
+  border-bottom: 2px solid #feb71e;
+}
 
 .navbarContainer {
   display: flex;

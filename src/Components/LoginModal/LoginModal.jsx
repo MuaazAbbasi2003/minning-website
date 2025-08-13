@@ -1,17 +1,39 @@
 import React, { useState } from "react";
 import styles from "./LoginModal.module.css";
+import API from "../../api/axios.js"; // named export
 
 export default function LoginModal({ onCl, onSwitchToSignup }) {
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
-
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Auth logic here
+    setLoading(true);
+    setError("");
+    try {
+      const res = await API.post("/login", {
+        email: formData.email,
+        password: formData.password,
+      });
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+      }
+      console.log("Login successful:", res.data);
+
+      onCl();
+      window.location.reload();
+    } catch (err) {
+      console.error("Login error:", err.response?.data || err.message);
+      setError(
+        err.response?.data?.message || "Login failed. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -22,6 +44,9 @@ export default function LoginModal({ onCl, onSwitchToSignup }) {
         </span>
         <h2>Welcome</h2>
         <p>Sign In To Your Account</p>
+
+        {/* Show Error */}
+        {error && <p className={styles.errorMsg}>{error}</p>}
 
         {/* Login Form */}
         <form onSubmit={handleSubmit} className={styles.loginForm}>
@@ -41,8 +66,8 @@ export default function LoginModal({ onCl, onSwitchToSignup }) {
             onChange={handleChange}
             required
           />
-          <button type="submit" className={styles.submitBtn}>
-            Sign In
+          <button type="submit" className={styles.submitBtn} disabled={loading}>
+            {loading ? "Signing In..." : "Sign In"}
           </button>
           <button
             type="button"

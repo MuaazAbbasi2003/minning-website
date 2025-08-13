@@ -1,0 +1,45 @@
+import React from "react";
+import styles from "./card.module.css";
+import image from "../../../../Assets/Images/PNGs/tp.png";
+
+export default function Card() {
+  return (
+    <div
+      className={`card ${styles.cardDiv}`}
+      style={{ width: "18rem", borderRadius: "13px" }}
+    >
+      <img
+        src={image}
+        className={`card-img-top ${styles.cardImage}`}
+        alt="blog visual"
+      />
+      <div className={`card-body ${styles.cardbodyDiv}`}>
+        <h6 className={styles.cardtitle}>
+          Design That Connects Meaningful User Experience
+        </h6>
+        <p className={`card-text ${styles.cardtext}`}>
+          Explore how thoughtful UI/UX design can turn digital products into
+          powerful, user-centric experiences;
+        </p>
+        <a href="" className={styles.anchor}>
+          Learn More
+          <strong>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              fill="currentColor"
+              className="bi bi-arrow-up-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+              />
+            </svg>
+          </strong>
+        </a>
+      </div>
+    </div>
+  );
+}

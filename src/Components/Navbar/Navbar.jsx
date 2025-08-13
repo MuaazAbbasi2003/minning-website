@@ -1,5 +1,6 @@
 import styles from "./navbar.module.css";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import LogoImg from "../../Assets/Images/PNGs/Logo.png";
 
 export default function Navbar({ onSwitchToLogin }) {
@@ -12,13 +13,13 @@ export default function Navbar({ onSwitchToLogin }) {
   return (
     <div className={styles.navbarWrapper}>
       <nav className={styles.navbarContainer}>
-        <a className={styles.navbarLogoLink} href="none">
+        <NavLink className={styles.navbarLogoLink} to="/">
           <img
             src={LogoImg}
             alt="SeaShell Logo"
             className={styles.navbarLogo}
           />
-        </a>
+        </NavLink>
 
         <button
           className={`${styles.menuToggleBtn} ${
@@ -37,24 +38,44 @@ export default function Navbar({ onSwitchToLogin }) {
         >
           <ul className={styles.menuLinks}>
             <li className={styles.menuItem}>
-              <a className={`${styles.menuLink} ${styles.active}`} href="none">
-                <strong id={styles.id}>Home</strong>
-              </a>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `${styles.menuLink} ${isActive ? styles.active : ""}`
+                }
+              >
+                <strong>Home</strong>
+              </NavLink>
             </li>
             <li className={styles.menuItem}>
-              <a className={styles.menuLink} href="#FAQs">
+              <NavLink
+                to="/FAQs"
+                className={({ isActive }) =>
+                  `${styles.menuLink} ${isActive ? styles.active : ""}`
+                }
+              >
                 FAQs
-              </a>
+              </NavLink>
             </li>
             <li className={styles.menuItem}>
-              <a className={styles.menuLink} href="#Blogs">
+              <NavLink
+                to="/blogs"
+                className={({ isActive }) =>
+                  `${styles.menuLink} ${isActive ? styles.active : ""}`
+                }
+              >
                 Blogs
-              </a>
+              </NavLink>
             </li>
             <li className={styles.menuItem}>
-              <a className={styles.menuLink} href="#Contact">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `${styles.menuLink} ${isActive ? styles.active : ""}`
+                }
+              >
                 Contact Us
-              </a>
+              </NavLink>
             </li>
             <li className={`${styles.menuItem} ${styles.mobileLoginItem}`}>
               <button

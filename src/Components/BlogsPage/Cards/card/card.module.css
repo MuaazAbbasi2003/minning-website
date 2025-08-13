@@ -1,0 +1,82 @@
+.cardDiv {
+  background-color: #000;
+  border-radius: 13px;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.cardDiv:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(255, 183, 30, 0.25);
+  border-color: rgba(255, 183, 30, 0.4);
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.cardDiv:hover .cardImage {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.cardbodyDiv {
+  background-color: #161412;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  border-radius: 0 0 13px 13px;
+}
+
+.cardtitle {
+  color: white;
+  margin: 10px 0;
+  font-weight: 500;
+  font-size: clamp(16px, 2vw, 19px);
+}
+
+.cardtext {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 300;
+  margin: 10px 0 20px;
+  line-height: 1.5;
+}
+
+.anchor {
+  color: #feb71e;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: clamp(12px, 1.5vw, 14px);
+  transition: color 0.3s ease;
+}
+
+.anchor:hover {
+  color: #ffcc5e;
+}
+
+.anchor strong {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.anchor:hover strong {
+  transform: translateX(5px);
+}
+
+/* Remove outlines from all inner elements too */
+.cardDiv *,
+.cardDiv {
+  outline: none !important;
+}

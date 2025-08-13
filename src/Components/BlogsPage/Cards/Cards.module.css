@@ -1,0 +1,75 @@
+.firstDiv {
+  width: 100%;
+  height: auto;
+  background-color: black;
+}
+
+.h1Div {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 40px;
+}
+
+.h1Div h2 {
+  font-weight: 700;
+}
+
+.mainCardDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.firstCardDiv {
+  width: 70%;
+  height: 20%;
+  display: flex;
+  gap: 20px;
+}
+
+/* Large Tablets / Small Laptops */
+@media (max-width: 1024px) {
+  .firstCardDiv {
+    width: 85%;
+  }
+  .h1Div h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .firstCardDiv {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .h1Div h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* iPhone SE & Small Mobiles */
+@media (max-width: 375px) {
+  .firstCardDiv {
+    width: 95%;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .h1Div h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .mainCardDiv {
+    gap: 15px;
+  }
+}
